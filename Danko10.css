@@ -1,0 +1,103 @@
+/* Базові налаштування, щоб прибрати відступи браузера */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Головний контейнер wrapper */
+.wrapper {
+    display: grid;
+    height: 100vh; /* Заповнює весь вільний простір екрану по висоті */
+    width: 100%;
+    gap: 3px; /* Зовнішній відступ між блоками 3px */
+    padding: 3px; /* Щоб відступ був і з країв екрану */
+    box-sizing: border-box;
+    
+    /* Рамка для блоків (вимога) застосується до дочірніх div */
+}
+
+.wrapper > div {
+    border: 1px solid white; /* Рамка 1px білого кольору */
+}
+
+/* Кольори блоків відповідно до зразка */
+.blue { background-color: #5b9bd5; }   
+.grey { background-color: #6e7d82; }   
+.cyan { background-color: #5bd1d1; }   
+.pink { background-color: #e16b6b; }  
+.yellow { background-color: #ffc000; }
+.green { background-color: #31a475; } 
+.orange { background-color: #c55a11; }
+
+/* --- АДАПТИВНІСТЬ (@media) --- */
+
+/* 1. Екрани < 500px (Мобільні) - все в одну колонку */
+@media (max-width: 499px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        /* grid-template-areas не обов'язковий, блоки йдуть по порядку */
+    }
+}
+
+/* 2. Екрани >= 500px (Малі планшети) - 2 колонки */
+@media (min-width: 500px) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr;
+        /* Розміщуємо блоки трохи компактніше */
+        grid-template-areas:
+            "blue blue"
+            "cyan pink"
+            "green yellow"
+            "grey grey"
+            "orange orange";
+    }
+    /* Прив'язуємо класи до імен зон сітки */
+    .blue { grid-area: blue; }
+    .grey { grid-area: grey; }
+    .cyan { grid-area: cyan; }
+    .pink { grid-area: pink; }
+    .yellow { grid-area: yellow; }
+    .green { grid-area: green; }
+    .orange { grid-area: orange; }
+}
+
+/* 3. Екрани >= 750px (Планшети) - 3 колонки */
+@media (min-width: 750px) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "blue blue grey"
+            "cyan pink grey"
+            "green yellow grey"
+            "orange orange orange";
+    }
+}
+
+/* 4. Екрани >= 950px (Ноутбуки) - перехід до повного макету */
+@media (min-width: 950px) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-areas:
+            "blue blue blue grey"
+            "cyan pink yellow grey"
+            "green green yellow grey"
+            "orange orange orange orange";
+    }
+}
+
+/* 5. Екрани >= 1200px (Десктопи) - точна копія макету з картинки */
+@media (min-width: 1200px) {
+    .wrapper {
+        /* Налаштовуємо пропорції колонок, щоб виглядало як на макеті */
+        grid-template-columns: 1.2fr 1.2fr 1.5fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 0.8fr;
+        grid-template-areas:
+            "blue blue blue grey"    /* Рядок 1: Синій на 3, Сірий на 1 */
+            "cyan pink yellow grey"  /* Рядок 2: Всі в ряд, Сірий продовжується */
+            "green green yellow grey" /* Рядок 3: Зелений на 2, Жовтий продовжується */
+            "orange orange orange orange"; /* Футер на всю ширину */
+    }
+}
