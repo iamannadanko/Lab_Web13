@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+font-family: Calibri, Arial, sans-serif;
+
+}
+
+.top-block {
+    display: flex;              
+    justify-content: space-between; 
+    align-items: center;      
+    background-color: #39c;
+    padding: 0px 20px 4px;           
+    color: #000;
+    line-height: 1;    
+    border-bottom: 2px solid red; 
+
+}
+
+.top-block h1,
+.top-block p {
+    margin: 0;       
+    padding: 0;
+
+}
+
+.top-block p {
+    color: #ffffff;
+      text-indent: 30px;
+}
+
+.left {
+    font-weight: bold; 
+}
+
+.right a {
+    color: #000000;
+    text-decoration: none;
+    margin-left: 15px;           
+    font-size: 16px;
+}
+
+footer {
+    background-color: #1c2027;   
+    padding: 20px;               
+    text-align: center;          
+}
+
+footer p {
+    color: #ffffff;              
+    margin: 0;                  
+    font-size: 14px;             
+}
+
+.register-box {
+    width: 380px;                  
+    margin: 40px auto;             
+    border: 1px solid #ccc;
+    text-align: center;            
+}
+
+.register-box .title {
+    background: #39c;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0; 
+}
+
+form {
+    padding: 15px; 
+}
+
+form label {
+    font-size: 14px;
+    margin-top: 8px; 
+    display: block;
+    text-align: left;             
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form input,
+form select {
+    width: 90%;
+    padding: 8px; 
+    margin: 6px auto; 
+    display: block;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 36px; 
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    width: 150px;
+    margin: 15px 5% 0px auto; 
+    display: block;
+}
+
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;       
+    
+    max-width: 1200px; 
+    margin: 0 auto;    
+    
+}
+    @import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css");
+
+.c1, .c2{
+font-size: 25px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.t1{
+font-family: Calibri, Arial, sans-serif;
+margin: 0;
+
+}
+
+.t2{
+font-family: 'Cascadia Code', sans-serif;
+font-weight: bold;
+margin: 0 0 20px;
+
+}
+
+.t1, .t2{
+ font-size: 16px;   
+}
+
+.c1{
+color: rgb(55, 161, 218);
+}
+
+.c2{
+color: rgb(18, 99, 139);    
+}
+
+.c3{
+color: rgb(45, 222, 32);
+}
+
+.c4{
+color: rgb(17, 120, 44);    
+}
+.c5{
+color: rgb(247, 128, 1);
+}
+
+.c6{
+color: rgb(191, 97, 9);    
+}
